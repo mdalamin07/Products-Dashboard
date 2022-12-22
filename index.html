@@ -15,9 +15,12 @@
         <!-- Sidebar start Here -->
         <div class="sidebar">
             <div class="logo-details">
-              <i class='bx bxl-c-plus-plus icon'></i>
-                <div class="logo_name">Codepen</div>
-                <i class='bx bx-menu' id="btn" ></i>
+              <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+              <div class="logo_name">Codepen</div>
+              <i id="btn">
+                <span class="app-icon" ></span>
+              </i>
+                <!-- <i class='bx bx-menu' id="btn" ></i> -->
             </div>
             <ul class="nav-list">
               <li>
@@ -26,14 +29,14 @@
                  <span class="tooltip">Search</span>
               </li>
               <li>
-                <a href="#">
+                <a class="tablinks active" onclick="openTab(event, 'tab1')">
                   <i class='bx bx-grid-alt'></i>
                   <span class="links_name">Dashboard</span>
                 </a>
                  <span class="tooltip">Dashboard</span>
               </li>
               <li>
-               <a href="#">
+               <a href="#" class="tablinks" onclick="openTab(event, 'tab2')">
                  <i class='bx bx-user' ></i>
                  <span class="links_name">User</span>
                </a>
@@ -98,7 +101,6 @@
             <!-- header start here -->
             <div class="app-header">
                 <div class="app-header-left">
-                <!-- <span class="app-icon"></span> -->
                 <p class="app-name">Portfolio</p>
                 <div class="search-wrapper">
                     <input class="search-input" type="text" placeholder="Search">
@@ -170,7 +172,7 @@
                 </button>
             </div>
             </div>
-            <div class="products-area-wrapper tableView">
+            <div id="tab1" class="products-area-wrapper tableView tabcontent">
             <div class="products-header">
                 <div class="product-cell image">
                 Items
@@ -415,6 +417,9 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>40</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$350</div>
             </div>
+            </div>
+            <div id="tab2" class="tabcontent">
+                <h1>tab2</h1>
             </div>
         </div>
     </div>
