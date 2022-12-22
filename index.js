@@ -52,7 +52,7 @@ function menuBtnChange() {
 /* Sidebar end here */   
 
 /* Tab Start Here */ 
-function openTab(evt, cityName) {
+function openTab(event, tabNumber) {
     // Declare all variables
     var i, tabcontent, tablinks;
   
@@ -69,7 +69,42 @@ function openTab(evt, cityName) {
     }
   
     // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(tabNumber).style.display = "block";
+    event.currentTarget.className += " active";
   }
 /* Tab End Here */ 
+
+/* Tab two Start here*/ 
+const wrapper = document.querySelector(".wrapper");
+const jobCards = document.querySelectorAll(".job-card");
+const logo = document.querySelector(".logo");
+const jobLogos = document.querySelector(".job-logos");
+const jobDetailTitle = document.querySelector(
+ ".job-explain-content .job-card-title"
+);
+const jobBg = document.querySelector(".job-bg");
+
+jobCards.forEach((jobCard) => {
+ jobCard.addEventListener("click", () => {
+  const number = Math.floor(Math.random() * 10);
+  const url = `https://unsplash.it/640/425?image=${number}`;
+  jobBg.src = url;
+
+  const logo = jobCard.querySelector("svg");
+  const bg = logo.style.backgroundColor;
+  console.log(bg);
+  jobBg.style.background = bg;
+  const title = jobCard.querySelector(".job-card-title");
+  jobDetailTitle.textContent = title.textContent;
+  jobLogos.innerHTML = logo.outerHTML;
+  wrapper.classList.add("detail-page");
+  wrapper.scrollTop = 0;
+ });
+});
+
+logo.addEventListener("click", () => {
+ wrapper.classList.remove("detail-page");
+ wrapper.scrollTop = 0;
+   jobBg.style.background = bg;
+});
+/* Tab two End here*/ 
